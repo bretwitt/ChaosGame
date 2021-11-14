@@ -11,19 +11,18 @@ class ChaosSimulation {
 
 private:
     std::vector<ChaosVertex>* vertices;
-    int width;
-    int height;
     int lastIndex = 3;
-    void randomPointInTriangle(int width, int& x, int& y);
-    std::mt19937 mt;
-    std::uniform_real_distribution<double> dist;
+    void randomPointInTriangle(int& x, int& y);
 
 public:
-    ChaosSimulation(int width, int height);
+    ChaosSimulation(int tri_size);
     void init();
     void tick();
     std::vector<ChaosVertex>* getVertices();
 
+    int getHeightAtX(int width);
+
+    int tri_size;
 };
 
 

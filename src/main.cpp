@@ -4,9 +4,9 @@
 
 int main() {
     const int screenWidth = 1080;
-    const int screenHeight = 540;
+    const int screenHeight = 1080;
 
-    auto* sim = new ChaosSimulation(screenWidth, screenHeight);
+    auto* sim = new ChaosSimulation(screenWidth);
     sim->init();
 
     InitWindow(screenWidth, screenHeight, "Chaos Game");
@@ -23,7 +23,7 @@ int main() {
         sim->tick();
 
         for(auto vert : *(sim->getVertices())) {
-            DrawCircle(vert.x, vert.y, vert.r, BLACK);
+            DrawCircle(vert.x, vert.y, 2, BLACK);
         }
 
         EndDrawing();
